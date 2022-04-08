@@ -1,0 +1,14 @@
+block content
+    h1= title
+    -let results =[{glasses_brand: "Oklay" ,glasses_style: "Retro" ,glasses_cost: 43},{glasses_brand:"Rayban",glasses_style:"Trasparent",glasses_cost:12},{glasses_brand:"Apple",glasses_style:"Large Bold",glasses_cost:34}]
+    div(class="container-fluid")
+     div(class="column")
+        each glas,index in results 
+            div(class="col-sm-2" onclick=`buy(${index})`)  #{glas.glasses_brand}  
+            div(class="col-sm-2" onclick=`buy(${index})`)  #{glas.glasses_style}
+            div(class="col-sm-2" onclick=`buy(${index})`)  #{glas.glasses_cost}
+script.
+    function buy(n)
+    {
+        alert(`You have purchased item ${n+1}`);
+    }
